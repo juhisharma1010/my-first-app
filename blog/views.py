@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
+from .models import Post_new
 from .forms import PostForm
 
 # Create your views here.

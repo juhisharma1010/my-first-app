@@ -18,3 +18,18 @@ class Post(models.Model):
 	#"dunder" (short for "double-underscore")
 	def __str__(self):
 		return self.title
+		
+class Post_new(models.Model):
+	author = models.CharField(max_length = 200)
+	title = models.CharField(max_length = 200)
+	text = models.TextField()
+	created_date = models.DateTimeField(default = timezone.now)
+	published_date = models.DateTimeField(blank=True, null=True)
+	
+	def publish(self):
+		self.published_date = timezone.now()
+		self.save()
+		
+	#"dunder" (short for "double-underscore")
+	def __str__(self):
+		return self.title
